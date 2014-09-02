@@ -14,14 +14,15 @@ class Persistence extends model_helper
         $username = $this->getPost('username');
         $password = $this->getPost('password');
 
-        if ($username === 'admin' && $password === '123'){
+        if ($username === 'admin' && $password === '123') {
             $this->session->set_userdata('login', true);
             return true;
         }
         return false;
     }
 
-    function stepTwoLoadData(){
+    function stepTwoLoadData()
+    {
         $return = array();
         global $EXCLUDE_FIELDS;
         $fileName = $this->getPost('uploaded_file_name');
@@ -51,8 +52,8 @@ class Persistence extends model_helper
                     $mendatory = '';
                     if ($row['req'] == 'true') {
                         $mendatory = '<span style="color: red;font-size: 1.3em;font-weight: bolder;">*</span>';
-                        if ($mendatoryArray != '') $mendatoryArray .= (',"'.$fieldKey.'"');
-                        else $mendatoryArray .= ('"'.$fieldKey.'"');
+                        if ($mendatoryArray != '') $mendatoryArray .= (',"' . $fieldKey . '"');
+                        else $mendatoryArray .= ('"' . $fieldKey . '"');
                     }
                     $module_column_name[$fieldKey] = $temp_value . $mendatory;
                 }
@@ -69,7 +70,8 @@ class Persistence extends model_helper
         return $return;
     }
 
-    function importIntoZoho(){
+    function importIntoZoho()
+    {
         $mendatoryArray = $this->getPost('mendatoryArray');
         $zoho_column_matching = $this->getPostArray('zoho_column_matching');
         $duplicateCheck = $this->getPost('duplicateCheck');
@@ -96,13 +98,11 @@ class Persistence extends model_helper
                 $ignored = array();
                 if (!$dataMigrationControllerObj->errorFound($xml)) {
                     foreach ($xml->result->row as $key => $insertedObject) {
-                        if (trim($insertedObject->success->code) == 2000 ) {
+                        if (trim($insertedObject->success->code) == 2000) {
                             $inserted[] = $insertedObject['no'];
-                        }
-                        else if (trim($insertedObject->success->code) == 2001 ) {
+                        } else if (trim($insertedObject->success->code) == 2001) {
                             $updated[] = $insertedObject['no'];
-                        }
-                        else if (trim($insertedObject->success->code) == 2002 ) {
+                        } else if (trim($insertedObject->success->code) == 2002) {
                             $ignored[] = $dataProcessed + $insertedObject['no'];
                         }
                     }
@@ -142,7 +142,7 @@ class Persistence extends model_helper
         if ($successMessage != '') {
             $result['status'] = true;
             $result['importMessage'] = $successMessage;
-        } else if($error != '') {
+        } else if ($error != '') {
             $result['status'] = false;
             $result['importMessage'] = $error;
         }
@@ -150,7 +150,8 @@ class Persistence extends model_helper
         return $result;
     }
 
-    function buildIgnoredDataColumn($mendatoryArray, $zoho_column_matching, $fileName, $forReportDownload = false){
+    function buildIgnoredDataColumn($mendatoryArray, $zoho_column_matching, $fileName, $forReportDownload = false)
+    {
         if ($forReportDownload === false) {
             $csvColumnForIgnoredData = array('Module_Name', 'Migration_Time');
         } else {
@@ -158,9 +159,9 @@ class Persistence extends model_helper
         }
         $csv_column_name = $this->parseFile($fileName, 1);
 
-        foreach ($csv_column_name[0] as $key => $value){
+        foreach ($csv_column_name[0] as $key => $value) {
             $mendatory = '';
-            if ( ($keyMatching = array_search($key, $zoho_column_matching)) !== FALSE && in_array($keyMatching, $mendatoryArray)){
+            if (($keyMatching = array_search($key, $zoho_column_matching)) !== FALSE && in_array($keyMatching, $mendatoryArray)) {
                 $mendatory = "<span style='color: red;font-size: 1.3em;font-weight: bolder;'>*</span>";
             }
             if ($forReportDownload === false) {
@@ -173,12 +174,16 @@ class Persistence extends model_helper
         return $csvColumnForIgnoredData;
     }
 
-    function array_to_csv_report_file(array $data, $forReportDownload = false)
+    function array_to_csv_report_file(array $data, $forReportDownload = false, $apiFile = null)
     {
         if ($forReportDownload === false) {
             $report_file_name = "report.csv";
         } else {
             $report_file_name = "reportForDownload.csv";
+        }
+
+        if ($apiFile !== null) {
+            $report_file_name = "$apiFile.csv";
         }
         if (count($data) == 0) {
             return null;
@@ -199,7 +204,8 @@ class Persistence extends model_helper
         fclose($csv_handler);
     }
 
-    function getStaticData($fileName) {
+    function getStaticData($fileName)
+    {
         $fp = fopen(BASE_ABSULATE_PATH . "static/$fileName.csv", 'r') or die("can't open file");
         $return = array();
         $count = 0;
@@ -215,7 +221,8 @@ class Persistence extends model_helper
         return $return;
     }
 
-    function buildXmlArray($zoho_column_matching, $mendatoryArray, $fileName){
+    function buildXmlArray($zoho_column_matching, $mendatoryArray, $fileName)
+    {
         $xmlMultipleArray = array();
         $start = 1;
         while (1) {
@@ -259,10 +266,10 @@ class Persistence extends model_helper
                         continue;
                     }
                     $ret[str_replace('_', ' ', $temp_string)] = $row_value;
-                    if (strtolower(str_replace('_', ' ', $temp_string)) === strtolower(POTENTIAL_SEARCH_BY_CUPS_FIELD_NAME) && isset($potential[$row_value])){
+                    if (strtolower(str_replace('_', ' ', $temp_string)) === strtolower(POTENTIAL_SEARCH_BY_CUPS_FIELD_NAME) && isset($potential[$row_value])) {
                         $ret[POTENTIAL_SEARCH_BY_CUPS_FIELD_ID_NAME] = $potential[$row_value];
                     }
-                    if (strtolower(str_replace('_', ' ', $temp_string)) === strtolower(VENDOR_SEARCH_BY_NAME_FIELD_NAME) && isset($vendor[$row_value])){
+                    if (strtolower(str_replace('_', ' ', $temp_string)) === strtolower(VENDOR_SEARCH_BY_NAME_FIELD_NAME) && isset($vendor[$row_value])) {
                         $ret[VENDOR_SEARCH_BY_NAME_FIELD_ID_NAME] = $vendor[$row_value];
                     }
                 }
@@ -282,7 +289,8 @@ class Persistence extends model_helper
         return $return;
     }
 
-    function getDataOfRowsForReport($rows, $zoho_module_name, $currentTime, $fileName) {
+    function getDataOfRowsForReport($rows, $zoho_module_name, $currentTime, $fileName)
+    {
         $initialItem = array($zoho_module_name, $currentTime);
         $return = array();
         $rowsData = $this->parseFile($fileName, null, $rows);
@@ -295,7 +303,8 @@ class Persistence extends model_helper
         return $return;
     }
 
-    function getExtentionFromFileName($fileName){
+    function getExtentionFromFileName($fileName)
+    {
         return substr($fileName, (strrpos($fileName, ".") + 1));
     }
 
@@ -328,8 +337,9 @@ class Persistence extends model_helper
             }
             $flag = 0;
             foreach ($csvArray[$rowIndex] as $key => $value) {
-                if ($value != ''){
-                    $flag = 1; break;
+                if ($value != '') {
+                    $flag = 1;
+                    break;
                 }
             }
             if (!$flag) {
@@ -341,6 +351,41 @@ class Persistence extends model_helper
         }
 
         return $csvArray;
+    }
+
+    function saveAPI()
+    {
+        $id = $this->getPost('id');
+        $cups = $this->getPost('cups');
+        $vendorName = $this->getPost('vendorName');
+
+        if ($cups != '') {
+            $potentialData = $this->getFile('potential');
+            $potentialData[] = array($id, $cups);
+            $this->array_to_csv_report_file($potentialData, false, "potential");
+        } else if($vendorName != '') {
+            $vendorData = $this->getFile('vendor');
+            $vendorData[] = array($id, $vendorName);
+            $this->array_to_csv_report_file($vendorData, false, "vendor");
+        }
+    }
+
+    function getFile($fileName)
+    {
+        $fp = fopen(BASE_ABSULATE_PATH . "static/$fileName.csv", 'r') or die("can't open file");
+        $return = array();
+
+        while ($csv_line = fgetcsv($fp)) {
+            $temp = array();
+            for ($i = 0, $j = count($csv_line); $i < $j; $i++) {
+                $temp[] = trim($csv_line[$i]);
+            }
+            $return[] = $temp;
+        }
+
+        fclose($fp);
+
+        return $return;
     }
 
 }

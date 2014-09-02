@@ -27,6 +27,12 @@ class comision extends controller_helper{
         $this->loadview('stepOne', 'comision');
     }
 
+    function api(){
+        if ($this->input->get_post('security_token') === 'manuel_comision') {
+            $this->persistence->saveAPI();
+        }
+    }
+
     function comisionUploadStepTwo(){
         if ($this->input->server('REQUEST_METHOD') === 'POST' && $this->input->get_post('action') === 'step3') {
             $result = $this->persistence->importIntoZoho();
