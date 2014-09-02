@@ -1,0 +1,228 @@
+.sidebar_content p{
+    clear: none !important;
+    text-align: justify;
+}
+
+.dashboard_image{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.dashboard_title{
+    text-align: center;
+    text-decoration: underline;
+    color: #008EE8 !important;
+}
+
+.submitActionLoading{
+    background: url(../images/btns_red.gif) top center no-repeat !important;
+    text-shadow: 1px 1px 0 #b55f10 !important;
+}
+
+.submitActionLoading:hover{
+    background: url(../images/btns_red.gif) top center no-repeat !important;
+    text-shadow: 1px 1px 0 #b55f10 !important;
+}
+
+.redBorder{
+    border-color: red !important;
+}
+
+.checkboxAlignMiddle input[type=checkbox]{
+    margin-top: 5px !important;
+}
+
+.sortable tr th, .sortable tr td {
+    border-right: 1px solid;
+    border-right-color: #dddddd;
+}
+
+.sortable tr th{
+    border-top: 1px solid;
+    border-top-color: #dddddd;
+}
+
+.sortable tr th:hover, .headerSortDown:hover, .headerSortUp:hover{
+    color: #3AA3E6 !important;
+}
+
+.delete{
+    text-align: center !important;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#uploadTemplate{
+    display: none;
+}
+
+.required{
+    color: red;
+    font-weight: bold;
+}
+
+#addTemplate #next{
+    text-align: center;
+    padding-bottom: 0;
+    display: block;
+    width: 85px;
+    height: 30px;
+    line-height: 30px;
+    background: url(../images/btns.gif) top center no-repeat;
+    border: 0;
+    cursor: pointer;
+    margin-right: 10px;
+    vertical-align: middle;
+    font-family: "Titillium800", "Trebuchet MS", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 1px 1px 0 #0a5482;
+}
+
+#addTemplate #next:hover{
+    background: url(../images/btns_.gif) top center no-repeat;
+    text-shadow: 1px 1px 0 #b55f10;
+}
+
+#loading{
+    position: fixed;
+    margin: 0 auto;
+    width: 100%;
+    background: #ececec;
+    height: 100%;
+    z-index: 999;
+    opacity: 0.6;
+    left: 0;
+}
+
+#loadingImg{
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    z-index: 99999;
+}
+
+.logout{
+    position: absolute;
+    top: -15px;
+    color: #1D1D1D;
+    font-size: 11px;
+    right: 80px;
+}
+
+.logout a {
+    text-decoration: underline !important;
+    color: #1D1D1D !important;
+}
+
+.logout a:hover{
+    color: #ec8526 !important;
+}
+
+.selected_sub_menu a{
+    color: #FFFFFF !important;
+    background: #000000 !important;
+}
+
+.linkSubmit {
+    width: 165px;
+    background: url(../images/btnb.gif) top center no-repeat;
+    height: 30px;
+    line-height: 30px;
+    border: 0;
+    font-family: "Titillium800", "Trebuchet MS", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 1px 1px 0 #0a5482;
+    cursor: pointer;
+    margin-right: 10px;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: center;
+}
+
+.linkSubmit:hover {
+    text-decoration: none;
+    width: 165px;
+    background: url(../images/btnb_.gif) top center no-repeat;
+    height: 30px;
+    line-height: 30px;
+    border: 0;
+    font-family: "Titillium800", "Trebuchet MS", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 1px 1px 0 #0a5482;
+    cursor: pointer;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.selectBox{
+    width: 220px;
+}
+
+.sidebar_content .block .block_content{
+    background: none !important;
+    padding: 10px 20px 0 !important;
+}
+
+.border_top{
+    border-top: 1px solid #ddd;
+}
+
+.border_right{
+    border-right: 1px solid #ddd;
+}
+
+.border_bottom{
+    border-bottom: 1px solid #ddd;
+}
+
+.border_left{
+    border-left: 1px solid #ddd;
+}
+
+.viewTable{
+    margin-bottom: 0 !important;
+}
+
+.viewTable > thead > tr > th, .viewTable > tbody > tr > td{
+    border-right: 1px solid #ddd;
+    width: 50%
+}
+
+.viewTable > tbody > tr > td{
+    padding: 0 !important;
+}
+
+.viewInnerTable tr td{
+    border-right: none !important;
+}
+
+.insideTabMenu li{
+    background: url(../images/phs.gif) 7px center no-repeat !important;
+}
+
+.insideTabMenu .nobg {
+    background: none !important;
+}
+
+#permission_table tr td, #permission_table tr th{
+    text-align: center;
+}
+
+#permission_table input[type=checkbox]{
+    cursor: pointer;
+}
+
+#mapZohoData label{
+    display: inline-block;
+    width: 215px;
+}
