@@ -257,6 +257,7 @@ class Persistence extends model_helper
                 $ret = array();
                 $flag = 0;
                 foreach ($keys as $key => $csvColumn) {
+                    if ($csvColumn == '') continue;
                     $temp_string = $key;
                     $row_value = trim($csv_line[$csvColumn]);
                     if (in_array($temp_string, $mendatoryArray) && $row_value == '') {
