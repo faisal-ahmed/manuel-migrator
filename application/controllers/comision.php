@@ -12,14 +12,15 @@ require_once 'controller_helper.php';
 class comision extends controller_helper{
     function __construct() {
         parent::__construct();
-        $this->checkLogin();
     }
 
     function index(){
+        $this->checkLogin();
         redirect('comision/comisionUploadStepOne', 'refresh');
     }
 
     function comisionUploadStepOne(){
+        $this->checkLogin();
         $importMessage = $this->session->flashdata('importMessage');
         if (trim($importMessage) !== '') {
             $this->addViewData('success', array($importMessage));
@@ -30,10 +31,13 @@ class comision extends controller_helper{
     function api(){
         if ($this->input->get_post('security_token') === 'manuel_comision') {
             $this->persistence->saveAPI();
+        } else if ($this->input->get_post('security_token') === 'manuel_potential_lookup') {
+            $this->persistence->updatePotentialAPI();
         }
     }
 
     function comisionUploadStepTwo(){
+        $this->checkLogin();
         if ($this->input->server('REQUEST_METHOD') === 'POST' && $this->input->get_post('action') === 'step3') {
             $result = $this->persistence->importIntoZoho();
             if ($result['status'] !== false) {
@@ -50,19 +54,22 @@ class comision extends controller_helper{
     }
 
     function sampleFileDownload(){
-        if (file_exists(BASE_ABSULATE_PATH . 'static/sample.xls')) {
+        $fileName = $this->input->get_post('file');
+        $fileName = ($fileName === 'report') ? "reportForDownload.csv" : "sample.xls";
+        $this->checkLogin();
+        if (file_exists(BASE_ABSULATE_PATH . "static/$fileName")) {
             header('Content-Description: File Transfer');
             header("Content-Type: application/force-download");
             header("Content-Type: application/octet-stream");
             header("Content-Type: application/download");
             header("Content-Type: application/vnd.ms-excel");
-            header('Content-Disposition: attachment; filename=' . date("Y-m-d_H.i.s_") . 'sample.xls');
+            header('Content-Disposition: attachment; filename=' . date("Y-m-d_H.i.s_") . $fileName);
             header('Content-Transfer-Encoding: binary');
             header('Expires: 0');
             header('Cache-Control: max-age=0, no-cache, must-revalidate, proxy-revalidate');
             header('Pragma: public');
-            header('Content-Length: ' . filesize(BASE_ABSULATE_PATH . 'static/sample.xls'));
-            readfile(BASE_ABSULATE_PATH . 'static/sample.xls');
+            header('Content-Length: ' . filesize(BASE_ABSULATE_PATH . "static/$fileName"));
+            readfile(BASE_ABSULATE_PATH . "static/$fileName");
         }
         ob_end_flush();
         die;

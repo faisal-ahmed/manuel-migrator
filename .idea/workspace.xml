@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad4bade4-c978-4b3f-807a-bfdbd56fed12" name="Default" comment="">
+      <change type="DELETED" beforePath="D:\wamp\www\manuel\manuel-migrator\static\potential1.csv" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/libraries/Utilities.php" afterPath="$PROJECT_DIR$/application/libraries/Utilities.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/comision.php" afterPath="$PROJECT_DIR$/application/controllers/comision.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/persistence.php" afterPath="$PROJECT_DIR$/application/models/persistence.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/potential.csv" afterPath="$PROJECT_DIR$/static/potential.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/comision/stepOne.php" afterPath="$PROJECT_DIR$/application/views/comision/stepOne.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="manuel-migrator.iws" />
@@ -29,20 +34,47 @@
       <file leaf-file-name="comision.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/comision.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="9" selection-start="826" selection-end="826" vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="1275">
+            <state line="70" column="83" selection-start="2753" selection-end="2753" vertical-scroll-proportion="-16.346153" vertical-offset="663" max-vertical-offset="1292">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="persistence.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="persistence.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/persistence.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="241" column="0" selection-start="9607" selection-end="9607" vertical-scroll-proportion="0.11908932" vertical-offset="4029" max-vertical-offset="6783">
+            <state line="96" column="40" selection-start="3903" selection-end="3903" vertical-scroll-proportion="-6.6538463" vertical-offset="1459" max-vertical-offset="7548">
               <folding>
-                <marker date="1410832534051" expanded="false" signature="1970:2018" placeholder="..." />
-                <marker date="1410832534051" expanded="false" signature="7314:7362" placeholder="..." />
+                <marker date="1411496873037" expanded="false" signature="1970:2018" placeholder="..." />
+                <marker date="1411496873037" expanded="true" signature="8366:8414" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stepOne.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/comision/stepOne.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="100" selection-start="1725" selection-end="1725" vertical-scroll-proportion="0.47635728" vertical-offset="0" max-vertical-offset="799">
+              <folding>
+                <element signature="n#style#0;n#h3#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#p#0;n#div#1;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#p#0;n#div#2;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#0;n#div#3;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#p#0;n#div#3;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#2;n#p#0;n#div#3;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Utilities.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/libraries/Utilities.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="37" column="41" selection-start="1211" selection-end="1211" vertical-scroll-proportion="-10.461538" vertical-offset="272" max-vertical-offset="2431">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,11 +112,11 @@
         <option value="$PROJECT_DIR$/application/libraries/utils_conversion.php" />
         <option value="$PROJECT_DIR$/system/core/Input.php" />
         <option value="$PROJECT_DIR$/application/models/model_helper.php" />
-        <option value="$PROJECT_DIR$/application/libraries/Utilities.php" />
         <option value="$PROJECT_DIR$/application/views/comision/stepTwo.php" />
-        <option value="$PROJECT_DIR$/application/views/comision/stepOne.php" />
-        <option value="$PROJECT_DIR$/application/controllers/comision.php" />
+        <option value="$PROJECT_DIR$/application/libraries/Utilities.php" />
         <option value="$PROJECT_DIR$/application/models/persistence.php" />
+        <option value="$PROJECT_DIR$/application/controllers/comision.php" />
+        <option value="$PROJECT_DIR$/application/views/comision/stepOne.php" />
       </list>
     </option>
   </component>
@@ -150,6 +182,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manuel-migrator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manuel-migrator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manuel-migrator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manuel-migrator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comision" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -302,11 +374,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32861635" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -324,9 +396,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -348,6 +420,64 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/application/controllers/comision.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="1" selection-start="2746" selection-end="2746" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/persistence.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="109" selection-start="4805" selection-end="4805" vertical-scroll-proportion="0.0" vertical-offset="1887" max-vertical-offset="7463">
+          <folding>
+            <marker date="1411496873037" expanded="false" signature="1970:2018" placeholder="..." />
+            <marker date="1411496873037" expanded="true" signature="8366:8414" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/Utilities.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="65" selection-start="1235" selection-end="1235" vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="2499">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/comision.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="1" selection-start="2746" selection-end="2746" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="1360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/persistence.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="44" selection-start="3755" selection-end="3755" vertical-scroll-proportion="0.0" vertical-offset="1564" max-vertical-offset="7123">
+          <folding>
+            <marker date="1411496873037" expanded="false" signature="1970:2018" placeholder="..." />
+            <marker date="1411496873037" expanded="true" signature="8366:8414" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/comision.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="9" selection-start="826" selection-end="826" vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="1275">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/persistence.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="241" column="0" selection-start="9607" selection-end="9607" vertical-scroll-proportion="0.0" vertical-offset="4029" max-vertical-offset="6783">
+          <folding>
+            <marker date="1411496873037" expanded="false" signature="1970:2018" placeholder="..." />
+            <marker date="1411496873037" expanded="true" signature="8366:8414" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/comision.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="9" selection-start="826" selection-end="826" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1275">
           <folding />
         </state>
@@ -357,8 +487,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="269" column="94" selection-start="10939" selection-end="10939" vertical-scroll-proportion="0.0" vertical-offset="4325" max-vertical-offset="6766">
           <folding>
-            <marker date="1410832534051" expanded="false" signature="1970:2018" placeholder="..." />
-            <marker date="1410832534051" expanded="false" signature="7314:7362" placeholder="..." />
+            <marker date="1411496873037" expanded="false" signature="1970:2018" placeholder="..." />
+            <marker date="1411496873037" expanded="true" signature="8366:8414" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -381,8 +511,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="217" column="41" selection-start="9368" selection-end="9381" vertical-scroll-proportion="0.0" vertical-offset="3689" max-vertical-offset="4862">
           <folding>
-            <marker date="1410832534051" expanded="false" signature="1970:2018" placeholder="..." />
-            <marker date="1410832534051" expanded="false" signature="7314:7362" placeholder="..." />
+            <marker date="1411496873037" expanded="false" signature="1970:2018" placeholder="..." />
+            <marker date="1411496873037" expanded="true" signature="8366:8414" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -489,28 +619,9 @@
         <state line="11" column="24" selection-start="561" selection-end="561" vertical-scroll-proportion="0.32020548" vertical-offset="0" max-vertical-offset="584" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/additional_library/zoho_library/utils_zoho_request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="20" selection-start="5029" selection-end="5029" vertical-scroll-proportion="0.3490909" vertical-offset="2392" max-vertical-offset="4794">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/system/core/Input.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="730" column="49" selection-start="15760" selection-end="15795" vertical-scroll-proportion="0.22773972" vertical-offset="12277" max-vertical-offset="14518" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/libraries/Utilities.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="54" selection-start="1224" selection-end="1224" vertical-scroll-proportion="0.09931507" vertical-offset="486" max-vertical-offset="2414">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/comision/stepOne.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="1130" selection-end="1130" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="765" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/comision/stepTwo.php">
@@ -525,19 +636,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/additional_library/zoho_library/utils_zoho_request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="152" column="20" selection-start="5029" selection-end="5029" vertical-scroll-proportion="0.3485114" vertical-offset="2385" max-vertical-offset="4794">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/comision.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="9" selection-start="826" selection-end="826" vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="1275">
+        <state line="70" column="83" selection-start="2753" selection-end="2753" vertical-scroll-proportion="-16.346153" vertical-offset="663" max-vertical-offset="1292">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/Utilities.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="41" selection-start="1211" selection-end="1211" vertical-scroll-proportion="-10.461538" vertical-offset="272" max-vertical-offset="2431">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/persistence.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="241" column="0" selection-start="9607" selection-end="9607" vertical-scroll-proportion="0.11908932" vertical-offset="4029" max-vertical-offset="6783">
+        <state line="96" column="40" selection-start="3903" selection-end="3903" vertical-scroll-proportion="-6.6538463" vertical-offset="1459" max-vertical-offset="7548">
           <folding>
-            <marker date="1410832534051" expanded="false" signature="1970:2018" placeholder="..." />
-            <marker date="1410832534051" expanded="false" signature="7314:7362" placeholder="..." />
+            <marker date="1411496873037" expanded="false" signature="1970:2018" placeholder="..." />
+            <marker date="1411496873037" expanded="true" signature="8366:8414" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/comision/stepOne.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="100" selection-start="1725" selection-end="1725" vertical-scroll-proportion="0.47635728" vertical-offset="0" max-vertical-offset="799">
+          <folding>
+            <element signature="n#style#0;n#h3#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#p#0;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#p#0;n#div#1;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#p#0;n#div#2;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#0;n#div#3;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#p#0;n#div#3;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#2;n#p#0;n#div#3;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

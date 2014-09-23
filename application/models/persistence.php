@@ -90,20 +90,38 @@ class Persistence extends model_helper
         $currentTime = time();
         $dataProcessed = 0;
         foreach ($xmlArray as $bulkKey => $bulkRecords) {
+            $updated = array();
+            $inserted = array();
+            $ignored = array();
+            foreach ($bulkRecords as $key => $value) {
+                if (!isset($value['Oportunidades_ID'])){
+                    $ignored[] = $key;
+                    unset($bulkRecords[$key]);
+                }
+            }
             $response = $dataMigrationControllerObj->insertRecords($zoho_module_name, $bulkRecords, "$duplicateCheck");
             $xml = simplexml_load_string($response);
             if ($xml !== false) {
-                $updated = array();
-                $inserted = array();
-                $ignored = array();
                 if (!$dataMigrationControllerObj->errorFound($xml)) {
                     foreach ($xml->result->row as $key => $insertedObject) {
+                        if (isset($bulkRecords[$insertedObject['no'] - 1]['Oportunidades_ID'])) {
+                            $xmlArray2 = array(
+                                1 => array(
+                                    'Comision' => $bulkRecords[$insertedObject['no'] - 1]['CustomModule5 Name'],
+                                ),
+                            );
+
+                            $id = $bulkRecords[$insertedObject['no'] - 1]['Oportunidades_ID'];
+                            $zohoUpdatePotential = $dataMigrationControllerObj->updateRecords(POTENTIAL_MODULE, $id, $xmlArray2);
+                            $xml = simplexml_load_string($zohoUpdatePotential);
+                            //$this->debug($xml);
+                        }
                         if (trim($insertedObject->success->code) == 2000) {
                             $inserted[] = $insertedObject['no'];
                         } else if (trim($insertedObject->success->code) == 2001) {
                             $updated[] = $insertedObject['no'];
                         } else if (trim($insertedObject->success->code) == 2002) {
-                            $ignored[] = $dataProcessed + $insertedObject['no'];
+                            $ignored[] = $dataProcessed + $insertedObject['no'] - 1;
                         }
                     }
                     $ignored = array_merge($ignored, array_diff(range(1, count($bulkRecords)), array_merge($inserted, $updated)));
@@ -113,6 +131,7 @@ class Persistence extends model_helper
                 $ignoredCount += count($ignored);
                 if (count($ignored) > 0) {
                     sort($ignored);
+                    $ignored = array_unique($ignored);
                     $rowsValue = $this->getDataOfRowsForReport($ignored, $zoho_module_name, $currentTime, $fileName);
                     foreach ($rowsValue as $row => $rowValue) {
                         $ignoredDataToBuildCSV[] = $rowValue[0];
@@ -153,7 +172,7 @@ class Persistence extends model_helper
     function buildIgnoredDataColumn($mendatoryArray, $zoho_column_matching, $fileName, $forReportDownload = false)
     {
         if ($forReportDownload === false) {
-            $csvColumnForIgnoredData = array('Module_Name', 'Migration_Time');
+            $csvColumnForIgnoredData = array('Module Name', 'Migration Time');
         } else {
             $csvColumnForIgnoredData = array();
         }
@@ -161,13 +180,17 @@ class Persistence extends model_helper
 
         foreach ($csv_column_name[0] as $key => $value) {
             $mendatory = '';
-            if (($keyMatching = array_search($key, $zoho_column_matching)) !== FALSE && in_array($keyMatching, $mendatoryArray)) {
-                $mendatory = "<span style='color: red;font-size: 1.3em;font-weight: bolder;'>*</span>";
-            }
-            if ($forReportDownload === false) {
-                $csvColumnForIgnoredData[] = $key . $mendatory;
-            } else {
-                $csvColumnForIgnoredData[] = $key;
+            if (($keyMatching = array_search($key, $zoho_column_matching)) !== FALSE) {
+                if (in_array($keyMatching, $mendatoryArray)) {
+                    $mendatory = "<span style='color: red;font-size: 1.3em;font-weight: bolder;'>*</span>";
+                }
+                $keyMatching = str_replace("_", " ", $keyMatching);
+                $keyMatching = str_replace("CustomModule5", REPLACE_CustomModule5, $keyMatching);
+                if ($forReportDownload === false) {
+                    $csvColumnForIgnoredData[] = $keyMatching . $mendatory;
+                } else {
+                    $csvColumnForIgnoredData[] = $keyMatching;
+                }
             }
         }
 
@@ -292,7 +315,8 @@ class Persistence extends model_helper
 
     function getDataOfRowsForReport($rows, $zoho_module_name, $currentTime, $fileName)
     {
-        $initialItem = array($zoho_module_name, $currentTime);
+        $moduleName = str_replace("CustomModule5", REPLACE_CustomModule5, $zoho_module_name);
+        $initialItem = array($moduleName, $currentTime);
         $return = array();
         $rowsData = $this->parseFile($fileName, null, $rows);
         foreach ($rowsData as $key => $value) {
@@ -336,19 +360,21 @@ class Persistence extends model_helper
                     $csvArray[$rowIndex][] = $cell->getCalculatedValue();
                 }
             }
-            $flag = 0;
-            foreach ($csvArray[$rowIndex] as $key => $value) {
-                if ($value != '') {
-                    $flag = 1;
-                    break;
+            if (isset($csvArray[$rowIndex])) {
+                $flag = 0;
+                foreach ($csvArray[$rowIndex] as $key => $value) {
+                    if ($value != '') {
+                        $flag = 1;
+                        break;
+                    }
                 }
-            }
-            if (!$flag) {
-                unset($csvArray[$rowIndex]);
-                $count--;
-            }
+                if (!$flag) {
+                    unset($csvArray[$rowIndex]);
+                    $count--;
+                }
 
-            if (++$count == $limit) break;
+                if (++$count === $limit) break;
+            }
         }
 
         return $csvArray;
@@ -368,6 +394,25 @@ class Persistence extends model_helper
             $vendorData = $this->getFile('vendor');
             $vendorData[] = array($id, $vendorName);
             $this->array_to_csv_report_file($vendorData, false, "vendor");
+        }
+    }
+
+    function updatePotentialAPI()
+    {
+        $id = $this->getPost('id');
+        $cups = $this->getPost('cups');
+
+        if ($cups != '') {
+            $zohoConnector = new ZohoDataSync();
+            $xmlArray = array(
+                1 => array(
+                    'Comision' => $cups,
+                ),
+            );
+
+            $zohoUpdatePotential = $zohoConnector->updateRecords(POTENTIAL_MODULE, $id, $xmlArray);
+            $xml = simplexml_load_string($zohoUpdatePotential);
+            $this->debug($xml);
         }
     }
 
